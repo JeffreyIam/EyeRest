@@ -3,6 +3,7 @@
   "name": "Eye-rester",
   "version": "1.0.0",
   "description": "Popup box telling you to rest your eyes every 30 mins while using Chrome ",
+  "permissions": ["storage"],
   "content_scripts" : [{
   	"matches" : ["https://*/*"],
     "js": ["index.js"],
