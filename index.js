@@ -1,10 +1,9 @@
-
 function saveChanges() {
     var box = document.createElement('div');
     box.textContent = "You've been using the computer for 30 minutes - Please take a 2 minute walk to rest your eyes.";
     box.setAttribute('class', 'popup');
 
-    var i = 5;
+    var i = 20; 
 
     var intervalID = setInterval(function() {
         if (i === 0) {
@@ -17,8 +16,15 @@ function saveChanges() {
         });
         i--;
     }, 1000);
-    chrome.storage.sync.get('value', function(obj) {
+/*    chrome.storage.sync.get('value', function(obj) {
         console.log(obj);
+    });*/ 
+    chrome.storage.sync.get('value',function(obj){
+    	console.log(obj.value);
+    	i = obj.value; 
     });
-
 }
+
+
+saveChanges(); 
+
